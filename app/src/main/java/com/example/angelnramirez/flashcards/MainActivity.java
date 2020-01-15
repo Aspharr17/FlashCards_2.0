@@ -13,6 +13,7 @@ import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity
     GifImageView giv_ship;
     private Placeholder placeholder;
     private ConstraintLayout mainlayout;
-    private Button button;
+    private ImageButton start;
     MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity
 
         setView();
 
-        button.setOnClickListener(new View.OnClickListener() {
+        start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TransitionManager.beginDelayedTransition(mainlayout);
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity
         giv_ship = findViewById(R.id.giv_ship);
         placeholder = findViewById(R.id.placeholder);
         mainlayout = findViewById(R.id.MainLayout);
-        button = findViewById(R.id.button);
+        start = findViewById(R.id.btn_start);
 
         try {
             mp = MediaPlayer.create(this, R.raw.shiplauncher);

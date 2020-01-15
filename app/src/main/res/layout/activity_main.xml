@@ -9,16 +9,22 @@
     tools:context=".MainActivity">
 
     <android.support.constraint.Placeholder
+        android:id="@+id/placeholder"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:id="@+id/placeholder"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginBottom="296dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.993"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="204dp"
         android:layout_height="162dp"
+        android:contentDescription="@string/planet_desc"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,27 +37,32 @@
         android:id="@+id/giv_ship"
         android:layout_width="164dp"
         android:layout_height="155dp"
-        android:layout_marginBottom="8dp"
 
         android:src="@drawable/ship"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+    <ImageButton
+        android:id="@+id/btn_start"
+        android:layout_width="468dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Button"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/btnIni_desc"
+        android:scaleX=".3"
+        android:scaleY=".3"
+        android:src="@drawable/inicio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
-
-
-    />
 
 
 </android.support.constraint.ConstraintLayout>
