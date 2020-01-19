@@ -10,13 +10,9 @@ import android.transition.TransitionManager;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.Toast;
-
 import com.example.angelnramirez.flashcards.sql_lite.DatabaseHelper;
 import com.example.angelnramirez.flashcards.sql_lite.level;
-
 import java.util.ArrayList;
-
 import pl.droidsonroids.gif.GifImageView;
 
 public class MainActivity extends AppCompatActivity
@@ -26,7 +22,6 @@ public class MainActivity extends AppCompatActivity
     private ConstraintLayout mainlayout;
     private ImageButton start;
     MediaPlayer mp;
-    DatabaseHelper myDb;
     ArrayList<level> ScoreTab;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -56,8 +51,6 @@ public class MainActivity extends AppCompatActivity
                 try
                 {
                     mp.start();
-                    Toast toast = Toast.makeText(getApplicationContext(),"Nivel: "+ ScoreTab.get(0).getLevel(),Toast.LENGTH_LONG);
-                    toast.show();
 
                 }catch (Exception e){
                     e.printStackTrace();
@@ -74,7 +67,6 @@ public class MainActivity extends AppCompatActivity
         mainlayout = findViewById(R.id.MainLayout);
         start = findViewById(R.id.btn_start);
         setSound();
-
 
     }
     protected void setSound()
