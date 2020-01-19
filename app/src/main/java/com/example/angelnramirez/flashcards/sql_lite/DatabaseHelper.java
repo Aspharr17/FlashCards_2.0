@@ -12,8 +12,6 @@ public class DatabaseHelper extends SQLiteAssetHelper {
     private static final String  DATABASE_NAME= "Levels.db";
     private String col[] = {"Level_sct", "NWords_sct", "HighSc_sct", "Atmps_sct"};
 
-
-
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
 
