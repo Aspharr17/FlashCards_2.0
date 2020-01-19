@@ -1,5 +1,6 @@
 package com.example.angelnramirez.flashcards;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
@@ -10,9 +11,7 @@ import android.transition.TransitionManager;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
-import com.example.angelnramirez.flashcards.sql_lite.DatabaseHelper;
-import com.example.angelnramirez.flashcards.sql_lite.level;
-import java.util.ArrayList;
+
 import pl.droidsonroids.gif.GifImageView;
 
 public class MainActivity extends AppCompatActivity
@@ -21,8 +20,9 @@ public class MainActivity extends AppCompatActivity
     private Placeholder placeholder;
     private ConstraintLayout mainlayout;
     private ImageButton start;
+    private ImageButton score;
     MediaPlayer mp;
-    ArrayList<level> ScoreTab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -33,10 +33,6 @@ public class MainActivity extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setObjects();
-        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
-        ScoreTab = databaseHelper.getScore();
-
-
 
         //Start Button
         start.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +51,15 @@ public class MainActivity extends AppCompatActivity
                 }catch (Exception e){
                     e.printStackTrace();
                 }
+
+            }
+        });
+        score.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),ScoreActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -66,6 +71,7 @@ public class MainActivity extends AppCompatActivity
         placeholder = findViewById(R.id.placeholder);
         mainlayout = findViewById(R.id.MainLayout);
         start = findViewById(R.id.btn_start);
+        score = findViewById(R.id.btn_score);
         setSound();
 
     }

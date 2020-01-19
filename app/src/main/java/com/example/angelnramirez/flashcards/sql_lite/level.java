@@ -7,6 +7,16 @@ public class level {
     int HighS;
     int Atmps;
 
+    public level() {
+    }
+
+    public level(int level, int NWords, int highS, int atmps) {
+        Level = level;
+        this.NWords = NWords;
+        HighS = highS;
+        Atmps = atmps;
+    }
+
     public int getLevel() {
         return Level;
     }
