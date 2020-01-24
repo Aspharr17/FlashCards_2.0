@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".LevelMenu"
+            android:screenOrientation="landscape"/>
+        <activity
             android:name=".ScoreActivity"
             android:screenOrientation="landscape" />
         <activity

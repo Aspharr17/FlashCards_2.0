@@ -1,15 +1,24 @@
 package com.example.angelnramirez.flashcards;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.Placeholder;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.ChangeBounds;
+import android.transition.Slide;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
+import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -20,8 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     GifImageView giv_ship;
     private Placeholder placeholder;
     private ConstraintLayout mainlayout;
-    private ImageButton start;
-    private ImageButton score;
     MediaPlayer mp;
 
     @Override
@@ -35,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setObjects();
 
+
+
     }
 
     protected void setObjects()
@@ -42,8 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         giv_ship = findViewById(R.id.giv_ship);
         placeholder = findViewById(R.id.placeholder);
         mainlayout = findViewById(R.id.MainLayout);
-        start = findViewById(R.id.btn_start);
-        score = findViewById(R.id.btn_score);
+        ImageButton start = findViewById(R.id.btn_start);
+        ImageButton score = findViewById(R.id.btn_score);
         start.setOnClickListener(this);
         score.setOnClickListener(this);
         setSound();
@@ -65,12 +74,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(v.getId() == R.id.btn_start)
         {
-            //TransitionManager.beginDelayedTransition(mainlayout);
+            /*TransitionManager.beginDelayedTransition(mainlayout);
 
             final ChangeBounds transition = new ChangeBounds();
             transition.setDuration(1500L);
+
             TransitionManager.beginDelayedTransition(mainlayout,transition);
             placeholder.setContentId(giv_ship.getId());
+            */
+
             try
             {
                 mp.start();
@@ -78,6 +90,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }catch (Exception e){
                 e.printStackTrace();
             }
+
+            Transition transition2 = new Slide(Gravity.START);
+            transition2.setDuration(2000L);
+            transition2.setInterpolator(new DecelerateInterpolator());
+            getWindow().setExitTransition(transition2);
+            Intent intent = new Intent(v.getContext(), LevelMenu.class);
+            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle());
 
         }
         else if(v.getId() == R.id.btn_score)

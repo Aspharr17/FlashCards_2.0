@@ -15,14 +15,6 @@ public class ScoreActivity extends AppCompatActivity {
     ArrayList<level> ScoreTab;
 
 
-    //Llevar a Strings en raw
-    private String [] Hcol;
-
-   // String [] Hcol = {l,"c2","c3","c4"};
-
-    private String [][] DataTable;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,16 +22,17 @@ public class ScoreActivity extends AppCompatActivity {
         //FullScreen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
         DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
         ScoreTab = databaseHelper.getScore();
         Resources res = getResources();
-        String[] Hcol = res.getStringArray(R.array.col_array);
 
         final TableView tb =  findViewById(R.id.TableView);
         tb.setColumnCount(4);
-        tb.setHeaderAdapter(new SimpleTableHeaderAdapter(this,Hcol));
+        tb.setHeaderAdapter(new SimpleTableHeaderAdapter(this,res.getStringArray(R.array.col_array)));
 
-        DataTable = databaseHelper.setArray(4); //Convert Arraylist to [][]String
+        String [][] DataTable = databaseHelper.setArray(4); //Convert Arraylist to [][]String
         tb.setDataAdapter(new SimpleTableDataAdapter(this, DataTable));
 
 
