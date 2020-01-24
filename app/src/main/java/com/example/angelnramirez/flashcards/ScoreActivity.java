@@ -1,5 +1,6 @@
 package com.example.angelnramirez.flashcards;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -15,7 +16,10 @@ public class ScoreActivity extends AppCompatActivity {
 
 
     //Llevar a Strings en raw
-    private String [] Hcol = {getString(R.string.Level), getString(R.string.nWords), getString(R.string.HighS), getString(R.string.Intentos)};
+    private String [] Hcol;
+
+   // String [] Hcol = {l,"c2","c3","c4"};
+
     private String [][] DataTable;
 
 
@@ -28,6 +32,8 @@ public class ScoreActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
         ScoreTab = databaseHelper.getScore();
+        Resources res = getResources();
+        String[] Hcol = res.getStringArray(R.array.col_array);
 
         final TableView tb =  findViewById(R.id.TableView);
         tb.setColumnCount(4);

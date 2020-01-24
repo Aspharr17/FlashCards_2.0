@@ -2,8 +2,11 @@
     <string name="app_name">FlashCards</string>
     <string name="planet_desc">Planet Background</string>
     <string name="btnIni_desc">Start Button</string>
-    <string name="Level">Nivel</string>
-    <string name="nWords">Numero de palabras</string>
-    <string name="HighS">Puntuación maxima</string>
-    <string name="Intentos">Intentos</string>
+
+    <string-array name="col_array">
+        <item>Nivel</item>
+        <item>Numero de palabras</item>
+        <item>Puntuación maxima</item>
+        <item>Intentos</item>
+    </string-array>
 </resources>

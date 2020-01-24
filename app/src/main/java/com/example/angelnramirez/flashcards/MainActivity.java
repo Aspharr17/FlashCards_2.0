@@ -11,10 +11,11 @@ import android.transition.TransitionManager;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import pl.droidsonroids.gif.GifImageView;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
     GifImageView giv_ship;
     private Placeholder placeholder;
@@ -34,35 +35,6 @@ public class MainActivity extends AppCompatActivity
 
         setObjects();
 
-        //Start Button
-        start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TransitionManager.beginDelayedTransition(mainlayout);
-
-                final ChangeBounds transition = new ChangeBounds();
-                transition.setDuration(1500L);
-                TransitionManager.beginDelayedTransition(mainlayout,transition);
-                placeholder.setContentId(giv_ship.getId());
-                try
-                {
-                    mp.start();
-
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-
-            }
-        });
-        score.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),ScoreActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
     }
 
     protected void setObjects()
@@ -72,6 +44,8 @@ public class MainActivity extends AppCompatActivity
         mainlayout = findViewById(R.id.MainLayout);
         start = findViewById(R.id.btn_start);
         score = findViewById(R.id.btn_score);
+        start.setOnClickListener(this);
+        score.setOnClickListener(this);
         setSound();
 
     }
@@ -83,6 +57,34 @@ public class MainActivity extends AppCompatActivity
         }
         catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(v.getId() == R.id.btn_start)
+        {
+            //TransitionManager.beginDelayedTransition(mainlayout);
+
+            final ChangeBounds transition = new ChangeBounds();
+            transition.setDuration(1500L);
+            TransitionManager.beginDelayedTransition(mainlayout,transition);
+            placeholder.setContentId(giv_ship.getId());
+            try
+            {
+                mp.start();
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
+        else if(v.getId() == R.id.btn_score)
+        {
+            Intent intent = new Intent(v.getContext(),ScoreActivity.class);
+            startActivity(intent);
+
         }
     }
 }
