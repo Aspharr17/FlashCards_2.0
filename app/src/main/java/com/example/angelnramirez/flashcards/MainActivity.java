@@ -92,9 +92,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             Transition transition2 = new Slide(Gravity.START);
-            transition2.setDuration(2000L);
+            transition2.setDuration(1500);
             transition2.setInterpolator(new DecelerateInterpolator());
-            getWindow().setExitTransition(transition2);
+            getWindow().setEnterTransition(transition2);
             Intent intent = new Intent(v.getContext(), LevelMenu.class);
             startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle());
 

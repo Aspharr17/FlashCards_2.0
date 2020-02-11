@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Testground"
+    android:background="@drawable/fondo_niveles">
+
+    <ImageButton
+        android:id="@+id/btnBackTest"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/backbutton" />
+    <TextView
+        android:id="@+id/txtWordsTest"
+        android:layout_width="609dp"
+        android:layout_height="276dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="130sp"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStartT"
+        android:layout_width="208dp"
+        android:layout_height="85dp"
+        android:backgroundTint="#4CAF50"
+        android:text="@string/startPractice"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtWordsTest"
+        app:layout_constraintEnd_toStartOf="@+id/txtWordsTest"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtWordsTest"
+        app:layout_constraintTop_toBottomOf="@+id/txtWordsTest" />
+
+</android.support.constraint.ConstraintLayout>

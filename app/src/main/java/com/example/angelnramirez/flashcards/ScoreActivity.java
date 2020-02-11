@@ -36,5 +36,6 @@ public class ScoreActivity extends AppCompatActivity {
         tb.setDataAdapter(new SimpleTableDataAdapter(this, DataTable));
 
 
+
     }
 }

@@ -1,0 +1,6 @@
+mamá,papá
+perro,papá,hermano,mamá,gato,hermana
+ojo,mano,pie,brazo,cabeza,boca
+caminar,correr,sentarse,reir,leer,dormir,beber,saltar
+gorra,pijama,zapatos,tenis,pelota,vestido
+reloj,mesa,pared,cocina,puerta

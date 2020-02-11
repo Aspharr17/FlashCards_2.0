@@ -12,8 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Playground"
-            android:screenOrientation="landscape"/>
+        <activity android:name=".Testground"
+            android:screenOrientation="landscape"
+            />
+        <activity
+            android:name=".Playground"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelMenu"
             android:screenOrientation="landscape" />

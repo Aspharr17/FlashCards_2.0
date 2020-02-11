@@ -21,7 +21,29 @@
             android:text="Grid Layout"
             android:textColor="@android:color/white"
             android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+
             android:textSize="34dp"/>
+
+        <RadioGroup
+            android:id="@+id/selection_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/cardview_light_background">
+
+            <RadioButton
+            android:id="@+id/practice_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Practica"/>
+            <RadioButton
+                android:id="@+id/evaluation_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Evaluacion"/>
+        </RadioGroup>
     </RelativeLayout>
 
     <GridLayout

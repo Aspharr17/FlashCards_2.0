@@ -11,6 +11,7 @@ public class DatabaseHelper extends SQLiteAssetHelper {
     private static final String  DATABASE_NAME= "Levels.db";
     private String col[] = {"Level_sct", "NWords_sct", "HighSc_sct", "Atmps_sct"};
     ArrayList<level> array;
+    String sqlTables = "Score_table";
 
 
     public DatabaseHelper(Context context) {
@@ -19,7 +20,7 @@ public class DatabaseHelper extends SQLiteAssetHelper {
 
     public ArrayList<level> getScore()
     {   array = new ArrayList<>();
-        String sqlTables = "Score_table";
+
 
         try {
             SQLiteDatabase db = getReadableDatabase();

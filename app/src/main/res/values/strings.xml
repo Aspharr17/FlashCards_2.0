@@ -9,4 +9,5 @@
         <item>Puntuación maxima</item>
         <item>Intentos</item>
     </string-array>
+    <string name="startPractice">Empezar</string>
 </resources>
