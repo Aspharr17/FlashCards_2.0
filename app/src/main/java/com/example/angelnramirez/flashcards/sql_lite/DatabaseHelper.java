@@ -1,6 +1,8 @@
 package com.example.angelnramirez.flashcards.sql_lite;
 
+import android.content.ContentValues;
 import android.content.Context;
+
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
@@ -20,7 +22,6 @@ public class DatabaseHelper extends SQLiteAssetHelper {
 
     public ArrayList<level> getScore()
     {   array = new ArrayList<>();
-
 
         try {
             SQLiteDatabase db = getReadableDatabase();
@@ -43,7 +44,26 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         }
         return array;
         }
-    //Turn ArrayList to a [][]String to be used in Tablelist
+    //Update max score and attempts
+    public void updateScore(int level, int score)
+    {
+        int atmps, maxScore;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM "+sqlTables+" WHERE Level_sct ="+level ,null);
+        if (cursor.moveToFirst())
+        {
+            atmps = cursor.getInt(3);
+            maxScore = cursor.getInt(2);
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(col[3], atmps+1);
+            if(score > maxScore) contentValues.put(col[2], score);
+
+            db.update(sqlTables, contentValues, "Level_sct = ?", new String[]{Integer.toString(level)});
+
+        }
+
+    }
+    //Turn ArrayList (From getScore) to a [][]String to be used in Tablelist
     public String [][] setArray(int ncol)
     {
           String [][] DataTable = new String[array.size()][ncol];
@@ -55,10 +75,6 @@ public class DatabaseHelper extends SQLiteAssetHelper {
             DataTable[i][2] = String.valueOf(array.get(i).getHighS());
             DataTable[i][3] = String.valueOf(array.get(i).getAtmps());
         }
-
-
-
-
         return DataTable;
     }
 

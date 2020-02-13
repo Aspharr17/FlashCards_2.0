@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Testground"
-    android:background="@drawable/fondo_niveles">
+    android:background="@drawable/fondo_niveles"
+    tools:context=".Testground">
 
     <ImageButton
         android:id="@+id/btnBackTest"
@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/backbutton" />
+
     <TextView
         android:id="@+id/txtWordsTest"
         android:layout_width="609dp"
@@ -32,7 +33,9 @@
         android:text=""
         android:textAlignment="center"
         android:textColor="#FF0000"
-        android:textSize="130sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="50sp"
+        android:autoSizeMaxTextSize="150sp"
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,5 +56,33 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/txtWordsTest"
         app:layout_constraintTop_toBottomOf="@+id/txtWordsTest" />
+
+    <ImageButton
+        android:id="@+id/btnCorrectT"
+        android:layout_width="159dp"
+        android:layout_height="149dp"
+        android:backgroundTint="#00FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtWordsTest"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="@+id/txtWordsTest"
+        app:layout_constraintTop_toTopOf="@+id/txtWordsTest"
+        app:layout_constraintVertical_bias="0.433"
+        app:srcCompat="@drawable/correcto" />
+
+    <ImageButton
+        android:id="@+id/btnIncorrectT"
+        android:layout_width="159dp"
+        android:layout_height="149dp"
+        android:backgroundTint="#00FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtWordsTest"
+        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintStart_toStartOf="@+id/txtWordsTest"
+        app:layout_constraintTop_toTopOf="@+id/txtWordsTest"
+        app:layout_constraintVertical_bias="0.433"
+        app:srcCompat="@drawable/incorrecto" />
 
 </android.support.constraint.ConstraintLayout>

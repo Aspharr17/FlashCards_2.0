@@ -1,21 +1,24 @@
 package com.example.angelnramirez.flashcards;
 
 import android.content.Intent;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class LevelMenu extends AppCompatActivity {
+public class LevelMenu extends AppCompatActivity implements View.OnClickListener {
 
     GridLayout mainGrid;
     RadioGroup selection;
     RadioButton mode;
+    ImageButton btnBacklvlMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +26,17 @@ public class LevelMenu extends AppCompatActivity {
         setContentView(R.layout.activity_level_menu);getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        setuI();
+        setSingleEvent(mainGrid);
+
+
+    }
+    private void setuI()
+    {
         mainGrid = findViewById(R.id.mainGrid);
         selection = findViewById(R.id.selection_group);
-        setSingleEvent(mainGrid);
+        btnBacklvlMenu = findViewById(R.id.btnBackLvlMenu);
+        btnBacklvlMenu.setOnClickListener(this);
 
     }
     private void setSingleEvent(GridLayout mainGrid) {
@@ -57,4 +68,14 @@ public class LevelMenu extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.btnBackLvlMenu)
+        {
+            Intent intent = new Intent(v.getContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+    }
 }
