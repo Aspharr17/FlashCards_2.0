@@ -9,6 +9,26 @@
         <item>Puntuación maxima</item>
         <item>Intentos</item>
     </string-array>
-    <string name="startPractice">Empezar</string>
+    <string name="Level">Nivel</string>
+    <string name="Practice">Practica</string>
+    <string name="Evaluation">Evaluación</string>
+    <string name="User">Usuario</string>
 
+    <string name="startPractice">Empezar</string>
+    <string name="BackButton">Back Button</string>
+    <string name="DeleteButton">Delete Button</string>
+    <string name="EditButton">Edit Button</string>
+    <string name="ProfileButton">Profile Button</string>
+    <string name="ScoreButton">Score Button</string>
+    <string name="Cardview">Cardview Button</string>
+
+    <string name="SceneImage">Scene Image</string>
+    <string name= "Help">Help</string>
+    <string name="Correct">Correct</string>
+    <string name="Incorrect">Incorrect</string>
+    <string name="save">Guardar</string>
+
+    <string name="Usu1">Usuario1</string>
+    <string name="Usu2">Usuario2</string>
+    <string name="Usu3">Usuario3</string>
 </resources>

@@ -16,17 +16,18 @@
 
         <ImageButton
             android:id="@+id/btnBackLvlMenu"
-            android:layout_width="59dp"
-            android:layout_height="61dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="174dp"
-            android:layout_marginBottom="83dp"
+            android:layout_marginEnd="288dp"
+            android:layout_marginBottom="102dp"
             android:layout_toStartOf="@+id/textView"
             android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/BackButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -40,31 +41,45 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Grid Layout"
-            android:textColor="@android:color/white"
-            android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/Level"
 
-            android:textSize="34dp"/>
+            android:textColor="@android:color/white"
+            android:textSize="36sp" />
 
         <RadioGroup
             android:id="@+id/selection_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@color/cardview_light_background">
+            android:layout_width="158dp"
+            android:layout_height="69dp"
+            android:layout_below="@+id/textView"
+            android:layout_alignStart="@+id/textView"
+            android:layout_alignEnd="@+id/textView"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-32dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="-46dp"
+            android:layout_marginBottom="25dp"
+            android:background="#00FFFFFF">
 
             <RadioButton
-            android:id="@+id/practice_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Practica"/>
-            <RadioButton
-                android:id="@+id/evaluation_button"
+                android:id="@+id/practice_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Evaluacion"/>
+                android:buttonTint="#FFFFFF"
+                android:checked="true"
+                android:text="@string/Practice"
+                android:textColor="#FAFFFFFF"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/evaluation_button"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:buttonTint="#FFFFFF"
+                android:text="@string/Evaluation"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
         </RadioGroup>
     </RelativeLayout>
 
@@ -105,7 +120,7 @@
 
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Nivel 1"

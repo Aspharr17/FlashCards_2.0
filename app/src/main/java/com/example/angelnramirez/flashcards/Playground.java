@@ -16,10 +16,10 @@ import java.io.IOException;
 import java.util.Locale;
 
 public class Playground extends AppCompatActivity implements View.OnClickListener {
-    String words [];
+    String [] words;
     TextView txtWords;
     Button btnStartP;
-    ImageButton btnNext,btnBack;
+    ImageButton btnNext;
     TextToSpeech ts;
     int nword = 0;
     @Override
@@ -38,7 +38,7 @@ public class Playground extends AppCompatActivity implements View.OnClickListene
         txtWords = findViewById(R.id.txtWordsP);
         btnStartP = findViewById(R.id.btnStartP);
         btnNext = findViewById(R.id.btnNext);
-        btnBack = findViewById(R.id.btnBackP);
+        ImageButton btnBack = findViewById(R.id.btnBackP);
         btnStartP.setOnClickListener(this);
         btnNext.setOnClickListener(this);
         btnBack.setOnClickListener(this);

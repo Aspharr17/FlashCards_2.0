@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.angelnramirez.flashcards.Words.WordsHelper;
 import com.example.angelnramirez.flashcards.sql_lite.DatabaseHelper;
+import com.example.angelnramirez.flashcards.sql_lite.GlobalUser;
 
 import java.io.IOException;
 
@@ -89,8 +90,10 @@ public class Testground extends AppCompatActivity implements View.OnClickListene
     }
     protected void finished()
     {
+
         txtWordsTest.setText("Aciertos: "+correct+"\nErrores: "+incorrect);
-        databaseHelper.updateScore(level,correct);
+        GlobalUser globalUser = (GlobalUser)getApplicationContext();
+        if(globalUser.getUser()!=0) databaseHelper.updateScore(level,correct,globalUser.getUser());
 
         txtWordsTest.postDelayed(new Runnable() {
             @Override

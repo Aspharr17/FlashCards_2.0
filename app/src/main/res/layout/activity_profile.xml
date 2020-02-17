@@ -12,6 +12,7 @@
         android:layout_width="79dp"
         android:layout_height="65dp"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/BackButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,129 +21,109 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/backbutton" />
 
-    <TextView
-        android:id="@+id/txtusu1"
-        android:layout_width="0dp"
-        android:layout_height="63dp"
-        android:background="@drawable/back"
-        android:gravity="center_vertical"
-        android:text="Usuario 1"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtusu2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
 
-    <TextView
-        android:id="@+id/txtusu2"
-        android:layout_width="0dp"
-        android:layout_height="63dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/back"
-        android:gravity="center_vertical"
-        android:text="Usuario 2"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtusu3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtusu3"
-        android:layout_width="0dp"
-        android:layout_height="63dp"
-        android:layout_marginBottom="68dp"
-        android:background="@drawable/back"
-        android:gravity="center_vertical"
-        android:text="Usuario 3"
-        android:textColor="#FFFFFF"
-
-        android:textSize="36sp"
+    <ImageButton
+        android:id="@+id/btnSave"
+        android:layout_width="193dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgUsers"
+        app:srcCompat="@drawable/guardar" />
 
     <ImageButton
-        android:id="@+id/btnDelU1"
-        android:layout_width="61dp"
-        android:layout_height="59dp"
+        android:id="@+id/btnDel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="334dp"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/DeleteButton"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
         android:tint="#FF0000"
-        app:layout_constraintBottom_toBottomOf="@+id/txtusu1"
-        app:layout_constraintEnd_toEndOf="@+id/txtusu1"
-        app:layout_constraintTop_toTopOf="@+id/txtusu1"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
-
-    <ImageButton
-        android:id="@+id/BtnDelU2"
-        android:layout_width="61dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="3dp"
-        android:backgroundTint="#00FFFFFF"
-        android:tint="#FF0000"
-        app:layout_constraintBottom_toBottomOf="@+id/txtusu2"
-        app:layout_constraintEnd_toEndOf="@+id/txtusu2"
-        app:layout_constraintTop_toTopOf="@+id/txtusu2"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
-
-    <ImageButton
-        android:id="@+id/btnDelU3"
-        android:layout_width="61dp"
-        android:layout_height="58dp"
-        android:backgroundTint="#00FFFFFF"
-        android:tint="#FF0000"
-        app:layout_constraintBottom_toBottomOf="@+id/txtusu3"
-        app:layout_constraintEnd_toEndOf="@+id/txtusu3"
-        app:layout_constraintTop_toTopOf="@+id/txtusu3"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
-
-    <ImageButton
-        android:id="@+id/btnEditU1"
-        android:layout_width="66dp"
-        android:layout_height="59dp"
-        android:backgroundTint="@android:color/transparent"
-        android:tint="#FFC107"
-        app:layout_constraintBottom_toBottomOf="@+id/txtusu1"
-        app:layout_constraintEnd_toStartOf="@+id/btnDelU1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/txtusu1"
-        app:layout_constraintTop_toTopOf="@+id/txtusu1"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
-
-    <ImageButton
-        android:id="@+id/btnEditU2"
-        android:layout_width="66dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginBottom="2dp"
-        android:backgroundTint="@android:color/transparent"
-        android:tint="#FFC107"
-        app:layout_constraintBottom_toBottomOf="@+id/txtusu2"
-        app:layout_constraintEnd_toStartOf="@+id/BtnDelU2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/txtusu2"
-        app:layout_constraintTop_toTopOf="@+id/txtusu2"
+        app:layout_constraintStart_toEndOf="@+id/btnEdit"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <ImageButton
-        android:id="@+id/btnEditU3"
-        android:layout_width="66dp"
-        android:layout_height="59dp"
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="544dp"
         android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/EditButton"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
         android:tint="#FFC107"
-        app:layout_constraintBottom_toBottomOf="@+id/txtusu3"
-        app:layout_constraintEnd_toStartOf="@+id/btnDelU3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/txtusu3"
-        app:layout_constraintTop_toTopOf="@+id/txtusu3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBackProfile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.017"
         app:srcCompat="@android:drawable/ic_menu_edit" />
+
+    <RadioGroup
+        android:id="@+id/rgUsers"
+        android:layout_width="649dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:buttonTint="#FFFFFF"
+            android:text="@string/Usu1"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:buttonTint="#FFFFFF"
+
+            android:text="@string/Usu2"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp" />
+
+        <RadioButton
+            android:id="@+id/rb3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:buttonTint="#FFFFFF"
+
+            android:text="@string/Usu3"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/User"
+        android:text="@string/User"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/rgUsers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

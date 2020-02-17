@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_niveles"
     android:orientation="horizontal"
-    tools:context=".ScoreActivity"
-    android:background="@drawable/fondo_niveles">
+    tools:context=".ScoreActivity">
 
     <de.codecrafters.tableview.TableView
         android:id="@+id/TableView"
@@ -29,10 +29,24 @@
         android:layout_height="65dp"
         android:layout_marginBottom="2dp"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/BackButton"
         app:layout_constraintBottom_toTopOf="@+id/TableView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backbutton" />
+
+    <TextView
+        android:id="@+id/txtUserScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/User"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/TableView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnBackScore"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -68,6 +68,7 @@
         android:layout_height="97dp"
         android:backgroundTint="#00FFFFFF"
 
+        android:contentDescription="@string/SceneImage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -81,6 +82,7 @@
         android:layout_width="137dp"
         android:layout_height="88dp"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/SceneImage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.423"
@@ -94,6 +96,7 @@
         android:layout_width="96dp"
         android:layout_height="47dp"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/ScoreButton"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
         app:layout_constraintEnd_toEndOf="@+id/imageButton3"
         app:layout_constraintHorizontal_bias="0.0"
@@ -107,6 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/Help"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
         app:layout_constraintEnd_toEndOf="@+id/imageButton5"
         app:layout_constraintHorizontal_bias="0.471"
@@ -121,6 +125,7 @@
         android:layout_height="63dp"
         android:backgroundTint="@android:color/transparent"
 
+        android:contentDescription="@string/ProfileButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -133,11 +138,24 @@
         android:id="@+id/imageView2"
         android:layout_width="91dp"
         android:layout_height="98dp"
+        android:contentDescription="@string/SceneImage"
         app:layout_constraintBottom_toTopOf="@+id/btnProfile"
         app:layout_constraintEnd_toEndOf="@+id/btnProfile"
         app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="@+id/btnProfile"
         app:srcCompat="@drawable/astronauta" />
+
+    <TextView
+        android:id="@+id/txtUserScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/User"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start" />
 
 
 </android.support.constraint.ConstraintLayout>

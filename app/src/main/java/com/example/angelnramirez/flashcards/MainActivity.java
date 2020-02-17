@@ -1,26 +1,20 @@
 package com.example.angelnramirez.flashcards;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.Placeholder;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.ChangeBounds;
-import android.transition.Slide;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
-import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.angelnramirez.flashcards.sql_lite.GlobalUser;
 
 import pl.droidsonroids.gif.GifImageView;
 
@@ -30,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Placeholder placeholder;
     private ConstraintLayout mainlayout;
     MediaPlayer mp;
+    GlobalUser globalUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -40,9 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        globalUser = (GlobalUser) getApplicationContext();
         setObjects();
-
-
 
     }
 
@@ -54,11 +48,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ImageButton start = findViewById(R.id.btn_start);
         ImageButton score = findViewById(R.id.btn_score);
         ImageButton profile = findViewById(R.id.btnProfile);
+        TextView txtUser = findViewById(R.id.txtUserScore);
         start.setOnClickListener(this);
         score.setOnClickListener(this);
         profile.setOnClickListener(this);
         setSound();
+        getUser();
+        txtUser.setText("Usuario: "+ globalUser.getUserName());
 
+    }
+    protected void getUser()
+    {
+        if(globalUser.getUserName()==null)
+        {
+            globalUser.setUserName("Sin sesion iniciada");
+        }
     }
     protected void setSound()
     {
@@ -70,39 +74,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
         }
     }
+    protected void transition()
+    {
+        TransitionManager.beginDelayedTransition(mainlayout);
+        final ChangeBounds transition = new ChangeBounds();
+        transition.setDuration(200);
+        TransitionManager.beginDelayedTransition(mainlayout,transition);
+        placeholder.setContentId(giv_ship.getId());
+        try
+        {
+            mp.start();
 
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        placeholder.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(getApplicationContext(), LevelMenu.class);
+                startActivity(intent);
+                finish();
+            }
+        },700);
+    }
     @Override
-    public void onClick(final View v) {
+    public void onClick(View v) {
 
         if(v.getId() == R.id.btn_start)
         {
-            TransitionManager.beginDelayedTransition(mainlayout);
-            final ChangeBounds transition = new ChangeBounds();
-            transition.setDuration(200);
-            TransitionManager.beginDelayedTransition(mainlayout,transition);
-            placeholder.setContentId(giv_ship.getId());
-            try
-            {
-                mp.start();
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-            placeholder.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent = new Intent(v.getContext(), LevelMenu.class);
-                    startActivity(intent);
-                    finish();
-                }
-            },700);
+            transition();
 
         }
         else if(v.getId() == R.id.btn_score)
         {
-            Intent intent = new Intent(v.getContext(),ScoreActivity.class);
-            startActivity(intent);
-            finish();
+            if(globalUser.getUser()!= 0)
+            {
+                Intent intent = new Intent(v.getContext(),ScoreActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else
+            {
+                Toast toast = Toast.makeText(this,"No disponible, Inicia Sesion",Toast.LENGTH_LONG);
+                toast.show();
+            }
 
         }
         else if(v.getId() == R.id.btnProfile)

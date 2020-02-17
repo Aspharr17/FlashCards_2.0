@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.angelnramirez.flashcards.sql_lite.DatabaseHelper;
+import com.example.angelnramirez.flashcards.sql_lite.GlobalUser;
 import com.example.angelnramirez.flashcards.sql_lite.level;
 import java.util.ArrayList;
 import de.codecrafters.tableview.TableView;
@@ -16,8 +18,8 @@ import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
 import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
 
 public class ScoreActivity extends AppCompatActivity implements View.OnClickListener {
-    ArrayList<level> ScoreTab;
     ImageButton btnBackScore;
+    GlobalUser globalUser;
 
 
 
@@ -29,22 +31,30 @@ public class ScoreActivity extends AppCompatActivity implements View.OnClickList
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        setObjects();
+        setTable();
+
+    }
+    protected void setObjects()
+    {
+        TextView txtUserScore =findViewById(R.id.txtUserScore);
         btnBackScore = findViewById(R.id.btnBackScore);
         btnBackScore.setOnClickListener(this);
-
+        globalUser = (GlobalUser)getApplicationContext();
+        txtUserScore.setText(globalUser.getUserName()+"  "+globalUser.getUser());
+    }
+    protected void setTable()
+    {
         DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
-        ScoreTab = databaseHelper.getScore();
         Resources res = getResources();
 
         final TableView tb =  findViewById(R.id.TableView);
         tb.setColumnCount(4);
         tb.setHeaderAdapter(new SimpleTableHeaderAdapter(this,res.getStringArray(R.array.col_array)));
 
-        String [][] DataTable = databaseHelper.setArray(4); //Convert Arraylist to [][]String
+        String [][] DataTable = databaseHelper.setArray(4,globalUser.getUser());
         tb.setDataAdapter(new SimpleTableDataAdapter(this, DataTable));
-
     }
-
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.btnBackScore)
