@@ -1,5 +1,6 @@
 package com.example.angelnramirez.flashcards;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,6 +47,11 @@ public class ScoreActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.btnBackScore) finish();
+        if(v.getId() == R.id.btnBackScore)
+        {
+            Intent intent = new Intent(v.getContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }

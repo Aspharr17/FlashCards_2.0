@@ -53,8 +53,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainlayout = findViewById(R.id.MainLayout);
         ImageButton start = findViewById(R.id.btn_start);
         ImageButton score = findViewById(R.id.btn_score);
+        ImageButton profile = findViewById(R.id.btnProfile);
         start.setOnClickListener(this);
         score.setOnClickListener(this);
+        profile.setOnClickListener(this);
         setSound();
 
     }
@@ -70,19 +72,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(final View v) {
 
         if(v.getId() == R.id.btn_start)
         {
-            /*TransitionManager.beginDelayedTransition(mainlayout);
-
+            TransitionManager.beginDelayedTransition(mainlayout);
             final ChangeBounds transition = new ChangeBounds();
-            transition.setDuration(1500L);
-
+            transition.setDuration(200);
             TransitionManager.beginDelayedTransition(mainlayout,transition);
             placeholder.setContentId(giv_ship.getId());
-            */
-
             try
             {
                 mp.start();
@@ -90,20 +88,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }catch (Exception e){
                 e.printStackTrace();
             }
-
-            Transition transition2 = new Slide(Gravity.START);
-            transition2.setDuration(1500);
-            transition2.setInterpolator(new DecelerateInterpolator());
-            getWindow().setEnterTransition(transition2);
-            Intent intent = new Intent(v.getContext(), LevelMenu.class);
-            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle());
+            placeholder.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(v.getContext(), LevelMenu.class);
+                    startActivity(intent);
+                    finish();
+                }
+            },700);
 
         }
         else if(v.getId() == R.id.btn_score)
         {
             Intent intent = new Intent(v.getContext(),ScoreActivity.class);
             startActivity(intent);
+            finish();
 
+        }
+        else if(v.getId() == R.id.btnProfile)
+        {
+            Intent intent = new Intent(v.getContext(),ProfileActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 }

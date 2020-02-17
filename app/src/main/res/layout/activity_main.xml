@@ -2,10 +2,10 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondotierra"
-    android:id="@+id/MainLayout"
     tools:context=".MainActivity">
 
     <android.support.constraint.Placeholder
@@ -22,15 +22,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="204dp"
-        android:layout_height="162dp"
+        android:layout_width="214dp"
+        android:layout_height="178dp"
         android:contentDescription="@string/planet_desc"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.582"
         app:srcCompat="@drawable/planeta" />
 
     <pl.droidsonroids.gif.GifImageView
@@ -48,18 +48,19 @@
 
     <ImageButton
         android:id="@+id/btn_start"
-        android:layout_width="141dp"
-        android:layout_height="74dp"
+        android:layout_width="187dp"
+        android:layout_height="81dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@android:color/transparent"
         android:contentDescription="@string/btnIni_desc"
+
         android:src="@drawable/inicio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintHorizontal_bias="0.736"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.566" />
+        app:layout_constraintVertical_bias="0.79" />
 
     <ImageView
         android:id="@+id/imageButton3"
@@ -82,10 +83,10 @@
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/yellow_planet" />
 
     <ImageButton
@@ -113,6 +114,30 @@
         app:layout_constraintTop_toTopOf="@+id/imageButton5"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ayuda" />
+
+    <ImageButton
+        android:id="@+id/btnProfile"
+        android:layout_width="133dp"
+        android:layout_height="63dp"
+        android:backgroundTint="@android:color/transparent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/usuario" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="91dp"
+        android:layout_height="98dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnProfile"
+        app:layout_constraintEnd_toEndOf="@+id/btnProfile"
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toStartOf="@+id/btnProfile"
+        app:srcCompat="@drawable/astronauta" />
 
 
 </android.support.constraint.ConstraintLayout>
