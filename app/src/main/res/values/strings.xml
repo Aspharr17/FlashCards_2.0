@@ -23,7 +23,7 @@
     <string name="Cardview">Cardview Button</string>
 
     <string name="SceneImage">Scene Image</string>
-    <string name= "Help">Help</string>
+    <string name="Help">Help</string>
     <string name="Correct">Correct</string>
     <string name="Incorrect">Incorrect</string>
     <string name="save">Guardar</string>
@@ -31,4 +31,13 @@
     <string name="Usu1">Usuario1</string>
     <string name="Usu2">Usuario2</string>
     <string name="Usu3">Usuario3</string>
+
+    <string name="Instruction">Instrucciones</string>
+    <string name="InstructionText">FlasCards es un método que ayuda a los niños a aprender a leer.
+        Se recomienda utilizar esta aplicación con la ayuda y tutela de un adulto.
+        Instrucciones: El método se divide en dos secciones, la practica y la evaluación.
+        PRACTICA En la practica vendrán una serie de tarjetas con el audio de lo que dice dicha tarjeta, el niño podrá interactuar con ella unos segundos y desaparecerá.
+        Se le debe mostrar un nivel de practica por lo menos unas tres veces dejando un lapso de unos 5 o 10 minutos entre cada una, después podrá pasar a la evaluación
+        EVALUACION Dentro de evaluación vendrán las mismas tarjetas pero ahora sin sonido, al desaparecer la palabra, el niño tendrá que decir que decía, una  ves que le diga pulsara en la flecha de siguiente y seleccionara una palomita si lo dijo bien, o una tachita si no lo dijo.
+    </string>
 </resources>

@@ -41,7 +41,7 @@ public class ScoreActivity extends AppCompatActivity implements View.OnClickList
         btnBackScore = findViewById(R.id.btnBackScore);
         btnBackScore.setOnClickListener(this);
         globalUser = (GlobalUser)getApplicationContext();
-        txtUserScore.setText(globalUser.getUserName()+"  "+globalUser.getUser());
+        txtUserScore.setText(globalUser.getUserName());
     }
     protected void setTable()
     {

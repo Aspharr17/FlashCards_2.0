@@ -48,10 +48,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ImageButton start = findViewById(R.id.btn_start);
         ImageButton score = findViewById(R.id.btn_score);
         ImageButton profile = findViewById(R.id.btnProfile);
+        ImageButton btnHelp = findViewById(R.id.btnHelp);
         TextView txtUser = findViewById(R.id.txtUserScore);
         start.setOnClickListener(this);
         score.setOnClickListener(this);
         profile.setOnClickListener(this);
+        btnHelp.setOnClickListener(this);
         setSound();
         getUser();
         txtUser.setText("Usuario: "+ globalUser.getUserName());
@@ -123,6 +125,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else if(v.getId() == R.id.btnProfile)
         {
             Intent intent = new Intent(v.getContext(),ProfileActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else if(v.getId() == R.id.btnHelp)
+        {
+            Intent intent = new Intent(v.getContext(),HelpActivity.class);
             startActivity(intent);
             finish();
         }

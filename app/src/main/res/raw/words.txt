@@ -4,3 +4,6 @@ ojo,mano,pie,brazo,cabeza,boca
 caminar,correr,sentarse,reir,leer,dormir,beber,saltar
 gorra,pijama,zapatos,tenis,pelota,vestido
 reloj,mesa,pared,cocina,puerta
+cero,uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve
+abeja,vaca,caballo,mono,girafa,perro,gato,ratón,gallo
+cuaderno,lapiz,hoja,borrador,sacapuntas,regla,tijeras
