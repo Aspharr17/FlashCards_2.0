@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import java.io.InputStreamReader;
 
 public class LevelMenu extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,7 +26,8 @@ public class LevelMenu extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_menu);getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+        setContentView(R.layout.activity_level_menu);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setuI();
@@ -37,6 +41,8 @@ public class LevelMenu extends AppCompatActivity implements View.OnClickListener
         selection = findViewById(R.id.selection_group);
         btnBacklvlMenu = findViewById(R.id.btnBackLvlMenu);
         btnBacklvlMenu.setOnClickListener(this);
+        Button btnExLvl = findViewById(R.id.btnExLvl);
+        btnExLvl.setOnClickListener(this);
 
     }
     private void setSingleEvent(GridLayout mainGrid) {
@@ -64,6 +70,7 @@ public class LevelMenu extends AppCompatActivity implements View.OnClickListener
         else intent = new Intent(LevelMenu.this,Testground.class);
 
         intent.putExtra("card",cardSelected);
+        intent.putExtra("mode",1);
         startActivity(intent);
     }
 
@@ -73,6 +80,12 @@ public class LevelMenu extends AppCompatActivity implements View.OnClickListener
         if(v.getId() == R.id.btnBackLvlMenu)
         {
             Intent intent = new Intent(v.getContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        if(v.getId() == R.id.btnExLvl)
+        {
+            Intent intent = new Intent(v.getContext(), ExtraLevelsActivity.class);
             startActivity(intent);
             finish();
         }

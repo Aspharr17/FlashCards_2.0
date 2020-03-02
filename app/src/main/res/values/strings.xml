@@ -10,6 +10,7 @@
         <item>Intentos</item>
     </string-array>
     <string name="Level">Nivel</string>
+    <string name="Extra_Level">Niveles Extra</string>
     <string name="Practice">Practica</string>
     <string name="Evaluation">Evaluación</string>
     <string name="User">Usuario</string>

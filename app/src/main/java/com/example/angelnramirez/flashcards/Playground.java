@@ -57,9 +57,10 @@ public class Playground extends AppCompatActivity implements View.OnClickListene
         if(getIntent() != null)
         {
             int info = getIntent().getIntExtra("card",0);
+            int mode = getIntent().getIntExtra("mode",1);
             WordsHelper wordsHelper = new WordsHelper(this);
             try {
-                words = wordsHelper.wordsReader(info);
+                words = wordsHelper.wordsReader(mode,info);
             } catch (IOException e) {
                 e.printStackTrace();
             }

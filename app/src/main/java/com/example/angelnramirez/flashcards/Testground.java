@@ -57,9 +57,10 @@ public class Testground extends AppCompatActivity implements View.OnClickListene
         if(getIntent() != null)
         {
             level = getIntent().getIntExtra("card",0);
+            int mode = getIntent().getIntExtra("mode",1);
             WordsHelper wordsHelper = new WordsHelper(this);
             try {
-                words = wordsHelper.wordsReader(level);
+                words = wordsHelper.wordsReader(mode, level);
             } catch (IOException e) {
                 e.printStackTrace();
             }

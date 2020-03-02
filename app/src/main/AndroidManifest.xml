@@ -14,9 +14,11 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".ExtraLevelsActivity"
+            android:screenOrientation="landscape"/>
+        <activity
             android:name=".HelpActivity"
-            android:screenOrientation="landscape"
-            />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ProfileActivity"
             android:screenOrientation="landscape" />

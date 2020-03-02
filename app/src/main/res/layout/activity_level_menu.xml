@@ -14,6 +14,7 @@
         android:layout_height="0dp"
         android:layout_weight="4">
 
+
         <ImageButton
             android:id="@+id/btnBackLvlMenu"
             android:layout_width="match_parent"
@@ -22,9 +23,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="-1dp"
             android:layout_marginEnd="288dp"
-            android:layout_marginBottom="102dp"
+            android:layout_marginBottom="103dp"
             android:layout_toStartOf="@+id/textView"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/BackButton"
@@ -35,7 +36,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/backbutton" />
-
 
         <TextView
             android:id="@+id/textView"
@@ -81,6 +81,20 @@
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
         </RadioGroup>
+
+        <Button
+            android:id="@+id/btnExLvl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="197dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="39dp"
+            android:layout_toEndOf="@+id/selection_group"
+            android:text="Button" />
     </RelativeLayout>
 
     <GridLayout
