@@ -43,19 +43,22 @@ public class ExtraLevelsActivity extends AppCompatActivity implements View.OnCli
         btnExlvl1 = findViewById(R.id.btnExlvl1);
         btnExlvl2 = findViewById(R.id.btnExLvl2);
         btnExlvl3 = findViewById(R.id.btnExLvl3);
+        Button btnborrar = findViewById(R.id.botonborrar);
         btnExlvl1.setOnClickListener(this);
         btnExlvl2.setOnClickListener(this);
         btnExlvl3.setOnClickListener(this);
-
+        btnborrar.setOnClickListener(this);
         Button btnBacktoLvlM = findViewById(R.id.btnBacktoLvlM);
         btnBacktoLvlM.setOnClickListener(this);
+        //Agregue el boton borrar, falta el diseno
+        btnborrar.setText("Borrar");
         setTitle();
 
 
     }
     private void setTitle()
     {
-        String [] Title = wordsHelper.TitleReader();
+        String [] Title = wordsHelper.TitleReader(getApplicationContext(), "extrawords.txt");
         if(Title[0].equals("vacio")) btnExlvl1.setText(Title[0]);
         else                         btnExlvl1.setText("1");
 
@@ -116,6 +119,11 @@ public class ExtraLevelsActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
 
+        if(v.getId() == R.id.botonborrar)
+        {
+            wordsHelper.cleanExtra();
+            setTitle();
+        }
         if(v.getId() == R.id.btnBackExtraLvl)
         {
             Intent intent = new Intent(v.getContext(), MainActivity.class);

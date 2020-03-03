@@ -14,7 +14,9 @@
     <string name="Practice">Practica</string>
     <string name="Evaluation">Evaluación</string>
     <string name="User">Usuario</string>
-
+    <string name="Levels">Niveles</string>
+    <string name="Delete">Eliminar</string>
+    <string name="ExtraLevels">Niveles Extra</string>
     <string name="startPractice">Empezar</string>
     <string name="BackButton">Back Button</string>
     <string name="DeleteButton">Delete Button</string>
