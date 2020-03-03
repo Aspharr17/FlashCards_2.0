@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import com.example.angelnramirez.flashcards.sql_lite.DatabaseHelper;
 import com.example.angelnramirez.flashcards.sql_lite.GlobalUser;
-import com.example.angelnramirez.flashcards.sql_lite.level;
-import java.util.ArrayList;
 import de.codecrafters.tableview.TableView;
 import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
 import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;

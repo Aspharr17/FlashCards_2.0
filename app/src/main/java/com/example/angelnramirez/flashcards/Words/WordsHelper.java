@@ -58,16 +58,17 @@ public class WordsHelper {
 
         return words;
     }
+
     public void wordsWriter(int nlvl, String text)
     {
-        String [] startingWords = TitleReader(context, "extrawords.txt");
+        String [] startingWords = extraReader(context, "extrawords.txt");
 
         startingWords[nlvl-1] = text;
         System.out.println(text);
         String wordsToWrite ="";
         for (int i = 0; i<startingWords.length; i++)
         {
-            TitleReader(context, "extrawords.txt");
+            extraReader(context, "extrawords.txt");
             wordsToWrite= wordsToWrite+ startingWords[i]+"\n";
 
         }
@@ -82,7 +83,7 @@ public class WordsHelper {
         {
             e.printStackTrace();
         }
-        TitleReader(context, "extrawords.txt");
+        extraReader(context, "extrawords.txt");
     }
     public void cleanExtra()
     {
@@ -99,7 +100,7 @@ public class WordsHelper {
             e.printStackTrace();
         }
     }
-    public String[] TitleReader(Context context, String filename) {
+    public String[] extraReader(Context context, String filename) {
         String[] words = new String[3];
         int i = 0;
         try {

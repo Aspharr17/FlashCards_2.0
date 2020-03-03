@@ -58,7 +58,7 @@ public class ExtraLevelsActivity extends AppCompatActivity implements View.OnCli
     }
     private void setTitle()
     {
-        String [] Title = wordsHelper.TitleReader(getApplicationContext(), "extrawords.txt");
+        String [] Title = wordsHelper.extraReader(getApplicationContext(), "extrawords.txt");
         if(Title[0].equals("vacio")) btnExlvl1.setText(Title[0]);
         else                         btnExlvl1.setText("1");
 

@@ -1,7 +1,7 @@
 package com.example.angelnramirez.flashcards;
 
 import android.content.Intent;
-import android.support.v4.app.ActivityOptionsCompat;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -12,9 +12,6 @@ import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
-
-import java.io.InputStreamReader;
 
 public class LevelMenu extends AppCompatActivity implements View.OnClickListener {
 
